@@ -1,6 +1,3 @@
-# מה הסיכוי של קבוצה לנצח אם היא הובילה בx שערים במחצית?
-# למשל בשער אחד 70% לנצח, 2 ב80% וכן הלאה. הפרש שערים במחצית על סיכוי הקבוצה לנצח. גרף עמודות. ואם היא בבית לעומת חוץ?
-
 # import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -8,17 +5,21 @@ import matplotlib.transforms
 # from scipy import stats
 # from scipy.stats import ttest_1samp
 
-from Leagues_Data_and_Adaptations import laLiga0919Filtered2
-from Leagues_Data_and_Adaptations import premierLeague9518Filtered2
+from Leagues_Data_and_Adaptations import laLiga0919Filtered2, laLiga0919Filtered3, laLiga0919Filtered4
+from Leagues_Data_and_Adaptations import premierLeague9518Filtered2, premierLeague9518Filtered3, premierLeague9518Filtered4
 
 plt.style.use(['seaborn-white', 'bmh'])
 
+graph1_title = "Half-Time-Leader's result at Final-Time"
+graph2_title = "Half-Time-Leader's result at Final-Time (leads by exactly 1)"
+graph3_title = "Half-Time-Leader's result at Final-Time (leads by 2 or more)"
+
 
 #### Bar graph of Half-Time-leader's status at Final Time result
-def HT_leader_status_at_FT_bar_plot_comparison(league_df_1, league_df_2):
+def HT_leader_status_at_FT_bar_plot_comparison(league_df_1, league_df_2, graph_title):
     ind = np.arange(3)  # the x locations for the groups
     width = 0.27  # the width of the bars
-    leaderStatus = np.array(["Leader Won", "Leader Drew", "Leader Lost"])
+    leaderStatus = np.array(["Leader Won", "Draw", "Leader Lost"])
 
     ### parameters for 1st league:
     num_of_games_that_have_lead_at_HT_1 = len(league_df_1)
@@ -42,14 +43,14 @@ def HT_leader_status_at_FT_bar_plot_comparison(league_df_1, league_df_2):
                            (num_of_games_that_draw_at_FT_2 / num_of_games_that_have_lead_at_HT_2) * 100,
                            (num_of_games_that_leader_loses_at_FT_2 / num_of_games_that_have_lead_at_HT_2) * 100]
 
-    fig = plt.figure()
+    fig = plt.figure(2)
     ax = fig.add_subplot(111)
     rects1 = ax.bar(ind, percentages_for_1st, width, color='#07a64c')
     rects2 = ax.bar(ind + width * 1.1, percentages_for_2nd, width, color='#b7040e')
 
     ### Title, Labels, Legend
     ## Title
-    plt.title("Half-Time-Leader's result at Final-Time")
+    plt.title(graph_title)
 
     ## y label
     ax.set_ylabel("Percents")
@@ -91,4 +92,7 @@ def HT_leader_status_at_FT_bar_plot_comparison(league_df_1, league_df_2):
     plt.show()
 
 
-HT_leader_status_at_FT_bar_plot_comparison(laLiga0919Filtered2, premierLeague9518Filtered2)
+HT_leader_status_at_FT_bar_plot_comparison(laLiga0919Filtered2, premierLeague9518Filtered2, graph1_title)
+HT_leader_status_at_FT_bar_plot_comparison(laLiga0919Filtered3, premierLeague9518Filtered3, graph2_title)
+HT_leader_status_at_FT_bar_plot_comparison(laLiga0919Filtered4, premierLeague9518Filtered4, graph3_title)
+
