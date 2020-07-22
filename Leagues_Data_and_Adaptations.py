@@ -6,7 +6,7 @@ from pandas import to_numeric
 
 warnings.filterwarnings("ignore")
 
-
+# אתה נקניק
 # import numpy as np
 
 # notes on files: http://www.football-data.co.uk/notes.txt:
