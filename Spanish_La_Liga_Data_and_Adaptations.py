@@ -39,18 +39,29 @@ import pandas as pd
 # ABP = Away Team Bookings Points (10 = yellow, 25 = red)
 
 # Reading the data files and concatenate the DFs:
-laLiga0910 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-0910_csv.csv')
-laLiga1011 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1011_csv.csv')
-laLiga1112 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1112_csv.csv')
-laLiga1213 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1213_csv.csv')
-laLiga1314 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1314_csv.csv')
-laLiga1415 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1415_csv.csv')
-laLiga1516 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1516_csv.csv')
-laLiga1617 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1617_csv.csv')
-laLiga1718 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1718_csv.csv')
-laLiga1819 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1819_csv.csv')
-frames = [laLiga0910, laLiga1011, laLiga1112, laLiga1213, laLiga1314, laLiga1415, laLiga1516, laLiga1617, laLiga1718, laLiga1819]
-laLiga0919Concatenated = pd.concat(frames)  # Chaining vertically the different DFs.
+files_list = [season-0910_csv,
+              season-0911_csv,
+              season-0912_csv,
+              season-0913_csv,
+              season-0914_csv,
+              season-0915_csv,
+              season-0916_csv,
+              season-0917_csv,
+              season-0918_csv,
+              season-0919_csv]
+              
+# laLiga0910 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-0910_csv.csv')
+# laLiga1011 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1011_csv.csv')
+# laLiga1112 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1112_csv.csv')
+# laLiga1213 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1213_csv.csv')
+# laLiga1314 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1314_csv.csv')
+# laLiga1415 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1415_csv.csv')
+# laLiga1516 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1516_csv.csv')
+# laLiga1617 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1617_csv.csv')
+# laLiga1718 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1718_csv.csv')
+# laLiga1819 = pd.read_csv('C:/Users/User/PycharmProjects/DS/Spanish La Liga Dataset/season-1819_csv.csv')
+# frames = [laLiga0910, laLiga1011, laLiga1112, laLiga1213, laLiga1314, laLiga1415, laLiga1516, laLiga1617, laLiga1718, laLiga1819]
+# laLiga0919Concatenated = pd.concat(frames)  # Chaining vertically the different DFs.
 
 ## Modifying the DF:
 # Leave relevant columns:
