@@ -8,8 +8,8 @@ import matplotlib.transforms
 # from scipy import stats
 # from scipy.stats import ttest_1samp
 
-from DS.Spanish_La_Liga_Data_and_Adaptations import laLiga0919Filtered2
-from DS.English_Premier_League_Data_and_Adaptations import premierLeague9518Filtered2
+from Leagues_Data_and_Adaptations import laLiga0919Filtered2
+from Leagues_Data_and_Adaptations import premierLeague9518Filtered2
 
 plt.style.use(['seaborn-white', 'bmh'])
 
@@ -82,7 +82,7 @@ def HT_leader_status_at_FT_bar_plot_comparison(league_df_1, league_df_2):
         for rect in rects:
             rectHeight = rect.get_height()
             rectWidth = rect.get_width()
-            ax.text(rect.get_x() + rectWidth/2., 1.005 * rectHeight, '%g' % round(float(rectHeight), 6), ha='center', va='bottom')
+            ax.text(rect.get_x() + rectWidth / 2., 1.005 * rectHeight, '%g' % round(float(rectHeight), 2), ha='center', va='bottom')
 
     autolabel(rects1)
     autolabel(rects2)
